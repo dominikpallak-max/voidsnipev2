@@ -27,7 +27,6 @@ jobs:
           mkdir -p proj
           unzip -oq "$ZIP" -d proj
           
-          # Znajdź katalog z plikiem build.gradle wewnątrz rozpakowanego folderu
           PROJECT_DIR=$(dirname "$(find proj -name "build.gradle" | head -1)")
           echo "Katalog projektu: $PROJECT_DIR"
           
@@ -35,7 +34,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: novaclient-jar
+          name: snipe-void
           path: |
             **/build/libs/*.jar
             !**/build/libs/*-sources.jar
